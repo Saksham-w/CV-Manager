@@ -86,4 +86,9 @@ router.beforeEach((to, from, next) => {
   }
 });
 
+window.addEventListener("beforeunload", () => {
+  localStorage.removeItem("auth-token");
+  localStorage.removeItem("name");
+});
+
 export default router;
